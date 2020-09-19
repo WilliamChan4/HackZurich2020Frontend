@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Choose a restaurant', 'Select a method', 'Call'];
+  return ['Search for a restaurant', 'Select a method', 'Call'];
 }
 
 function getStepContent(step, handleNext, restaurant, setRestaurant) {
