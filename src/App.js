@@ -7,11 +7,13 @@ import { PickedUp } from './PickedUp';
 import { Delivered } from './Delivered';
 import { Restaurants } from './Restaurants';
 import { WebcamComponent } from './Capture';
+import { VerticalLinearStepper } from './Stepper';
 
 function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
+      <VerticalLinearStepper></VerticalLinearStepper>
       {/* <WebcamComponent></WebcamComponent> */}
       <Restaurants></Restaurants>
       <Method></Method>
