@@ -15,6 +15,11 @@ function getRestaurants(search, position, setList) {
         }).then((response) => setList(response.data));
 }
 
+function setItem(item, setRestaurant, handleNext) {
+    setRestaurant(item);
+    handleNext();
+}
+
 export function Restaurants(props) {
     const [list, setList] = useState('');
     const [search, setSearch] = useState('');
@@ -46,7 +51,7 @@ export function Restaurants(props) {
                             <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} readOnly />
                         </CardContent>
                         <CardActions>
-                            <Button size="small" variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
+                            <Button size="small" variant="contained" color="primary" onClick={() => setItem(item, props.setRestaurant, props.handleNext)}>Select</Button>
                         </CardActions>
                     </Card>
                 </Grid>
