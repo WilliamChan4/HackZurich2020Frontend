@@ -1,9 +1,11 @@
 import React from 'react';
 import { Grid, Container, Card, CardContent, Button, Typography, CardActions } from "@material-ui/core";
+import { Search } from './Search';
 
 export function Restaurants() {
     return (
         <Container maxWidth="sm">
+            <Search></Search>
             <Grid container direction="column" justify="center" alignItems="stretch" spacing={3}>
                 <Grid item>
                     <Card>
