@@ -2,13 +2,16 @@ import React from 'react';
 import logo from './logo.png';
 // import './App.css';
 import 'fontsource-roboto';
+import { Container } from "@material-ui/core";
 import { VerticalLinearStepper } from './Stepper';
 
 function App() {
   return (
     <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-      <VerticalLinearStepper></VerticalLinearStepper>
+      <Container maxWidth="sm">
+        <img src={logo} alt="logo" />
+        <VerticalLinearStepper></VerticalLinearStepper>
+      </Container>
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

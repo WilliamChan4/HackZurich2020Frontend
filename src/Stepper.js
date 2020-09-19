@@ -35,9 +35,9 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <Restaurants></Restaurants>;
+      return <Restaurants />;
     case 1:
-      return <Method></Method>;
+      return <Method />;
     default:
       return 'Unknown step';
   }
