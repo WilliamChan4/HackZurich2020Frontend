@@ -88,7 +88,7 @@ export function VerticalLinearStepper() {
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
           <Typography>Please wear a mask!</Typography>
-          <Button onClick={handleReset} className={classes.button}>Reset</Button>
+          <Button onClick={handleReset} className={classes.button}>Finish</Button>
         </Paper>
       )}
     </div>

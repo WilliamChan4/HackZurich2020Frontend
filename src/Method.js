@@ -34,6 +34,7 @@ export function Method(props) {
                         <Typography variant="h5" component="h2">Pick Up</Typography>
                         <Typography variant="body2" component="p">{distances.walking.duration.text} walk</Typography>
                         <Typography variant="body2" component="p">{distances.bicycling.duration.text} bike</Typography>
+                        <Typography variant="body2" component="p">Save ${(distances.driving.emission * 0.1).toFixed(2)} on your Zurich health insurance premium.</Typography>
                     </CardContent>
                     <CardActions>
                         <Button size="small"  variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
@@ -44,8 +45,8 @@ export function Method(props) {
                 <Card>
                     <CardContent>
                         <Typography variant="h5" component="h2">Delivery</Typography>
-                        <Typography variant="body2" component="p">{distances.driving.duration.text} estimated delivery time</Typography>
-                        <Typography variant="body2" component="p">Offset carbon emissions for 20c</Typography>
+                        <Typography variant="body2" component="p">{distances.driving.duration.text} estimated delivery</Typography>
+                        <Typography variant="body2" component="p">Offset carbon emissions for ${(distances.driving.emission * 0.1).toFixed(2)} </Typography>
                     </CardContent>
                     <CardActions>
                         <Button size="small"  variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
