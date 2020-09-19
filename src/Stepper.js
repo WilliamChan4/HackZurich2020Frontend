@@ -38,7 +38,7 @@ function getStepContent(step, handleNext, restaurant, setRestaurant) {
     case 1:
       return <Method handleNext={handleNext} restaurant={restaurant} />;
     case 2:
-      return <Call handleNext={handleNext} />;
+      return <Call handleNext={handleNext} restaurant={restaurant} />;
     default:
       return 'Unknown step';
   }
