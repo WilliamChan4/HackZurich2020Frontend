@@ -9,8 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { Restaurants } from './Restaurants';
 import { Method } from './Method';
-import { PickedUp } from './PickedUp';
-import { Delivered } from './Delivered';
+import { Call } from './Call';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Choose a restaurant', 'Select a method'];
+  return ['Choose a restaurant', 'Select a method', 'Call'];
 }
 
 function getStepContent(step) {
@@ -38,6 +37,8 @@ function getStepContent(step) {
       return <Restaurants />;
     case 1:
       return <Method />;
+    case 2:
+      return <Call />;
     default:
       return 'Unknown step';
   }
@@ -46,6 +47,8 @@ function getStepContent(step) {
 export function VerticalLinearStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  const [restaurant, setRestaurant] = React.useState('');
+  const [pickup, setPickup] = React.useState(false);
   const steps = getSteps();
 
   const handleNext = () => {
@@ -93,9 +96,8 @@ export function VerticalLinearStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <PickedUp></PickedUp>
-          <Delivered></Delivered>
+          <Typography>Please wear a mask!</Typography>
+          <Typography>Your CO2 emissions have been offset with Climeworks.</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>

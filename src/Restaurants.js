@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Card, CardContent, Button, Typography, CardActions } from "@material-ui/core";
+import { Grid, Card, CardContent, Button, Typography, CardActions } from "@material-ui/core";
 import { Search } from './Search';
 
 export function Restaurants() {
