@@ -2,11 +2,13 @@ import React from 'react';
 import { Grid, Card, CardContent, Button, Typography, CardActions } from "@material-ui/core";
 import { Search } from './Search';
 
-export function Restaurants() {
+export function Restaurants(props) {
+    const [list, setList] = React.useState('');
+
     return (
         <Grid container direction="column" justify="center" alignItems="stretch" spacing={3}>
             <Grid item>
-                <Search></Search>
+                <Search setList={setList} />
             </Grid>
             <Grid item>
                 <Card>
@@ -16,7 +18,7 @@ export function Restaurants() {
                         <Typography variant="body2" component="p">500m away</Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary">Select</Button>
+                        <Button size="small" variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
                     </CardActions>
                 </Card>
             </Grid>
@@ -28,7 +30,7 @@ export function Restaurants() {
                         <Typography variant="body2" component="p">450m</Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary">Select</Button>
+                        <Button size="small" variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
                     </CardActions>
                 </Card>
             </Grid>

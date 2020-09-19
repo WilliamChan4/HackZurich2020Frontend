@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Card, CardContent, Button, Typography, CardActions } from "@material-ui/core";
 
-export function Method() {
+export function Method(props) {
     return (
         <Grid container spacing={3}>
             <Grid item xs>
@@ -13,7 +13,7 @@ export function Method() {
                         <Typography variant="body2" component="p">5 minutes bike</Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary">Select</Button>
+                        <Button size="small"  variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
                     </CardActions>
                 </Card>
             </Grid>
@@ -25,7 +25,7 @@ export function Method() {
                         <Typography variant="body2" component="p">Offset CO2 emissions for 20c</Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary">Select</Button>
+                        <Button size="small"  variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
                     </CardActions>
                 </Card>
             </Grid>

@@ -31,14 +31,14 @@ function getSteps() {
   return ['Choose a restaurant', 'Select a method', 'Call'];
 }
 
-function getStepContent(step) {
+function getStepContent(step, handleNext, restaurant, setRestaurant) {
   switch (step) {
     case 0:
-      return <Restaurants />;
+      return <Restaurants handleNext={handleNext} setRestaurant={setRestaurant} />;
     case 1:
-      return <Method />;
+      return <Method handleNext={handleNext} restaurant={restaurant} />;
     case 2:
-      return <Call />;
+      return <Call handleNext={handleNext} />;
     default:
       return 'Unknown step';
   }
@@ -48,7 +48,6 @@ export function VerticalLinearStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [restaurant, setRestaurant] = React.useState('');
-  const [pickup, setPickup] = React.useState(false);
   const steps = getSteps();
 
   const handleNext = () => {
@@ -70,7 +69,7 @@ export function VerticalLinearStepper() {
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              {getStepContent(index)}
+              {getStepContent(index, handleNext, restaurant, setRestaurant)}
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -79,14 +78,6 @@ export function VerticalLinearStepper() {
                     className={classes.button}
                   >
                     Back
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </div>
               </div>
@@ -97,10 +88,7 @@ export function VerticalLinearStepper() {
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
           <Typography>Please wear a mask!</Typography>
-          <Typography>Your CO2 emissions have been offset with Climeworks.</Typography>
-          <Button onClick={handleReset} className={classes.button}>
-            Reset
-          </Button>
+          <Button onClick={handleReset} className={classes.button}>Reset</Button>
         </Paper>
       )}
     </div>
