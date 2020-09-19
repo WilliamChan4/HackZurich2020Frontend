@@ -11,7 +11,8 @@ import { WebcamComponent } from './Capture';
 function App() {
   return (
     <div className="App">
-      <WebcamComponent></WebcamComponent>
+      <img src={logo} className="App-logo" alt="logo" />
+      {/* <WebcamComponent></WebcamComponent> */}
       <Restaurants></Restaurants>
       <Method></Method>
       <PickedUp></PickedUp>
