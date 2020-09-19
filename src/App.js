@@ -5,10 +5,12 @@ import 'fontsource-roboto';
 import { Method } from './Method.js';
 import { PickedUp } from './PickedUp.js';
 import { Delivered } from './Delivered.js';
+import { Restaurants } from './Restaurants';
 
 function App() {
   return (
     <div className="App">
+      <Restaurants></Restaurants>
       <Method></Method>
       <PickedUp></PickedUp>
       <Delivered></Delivered>
