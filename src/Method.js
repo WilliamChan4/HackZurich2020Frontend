@@ -46,7 +46,7 @@ export function Method(props) {
                     <CardContent>
                         <Typography variant="h5" component="h2">Delivery</Typography>
                         <Typography variant="body2" component="p">{distances.driving.duration.text} estimated delivery</Typography>
-                        <Typography variant="body2" component="p">Offset carbon emissions for ${(distances.driving.emission * 0.1).toFixed(2)} </Typography>
+                        <Typography variant="body2" component="p">Offset carbon emissions for ${(distances.driving.emission * 0.1).toFixed(2)} with Climeworks</Typography>
                     </CardContent>
                     <CardActions>
                         <Button size="small"  variant="contained" color="primary" onClick={props.handleNext}>Select</Button>
