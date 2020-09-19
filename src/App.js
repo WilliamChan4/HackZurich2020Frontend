@@ -3,11 +3,15 @@ import logo from './logo.png';
 // import './App.css';
 import 'fontsource-roboto';
 import { Method } from './Method.js';
+import { PickedUp } from './PickedUp.js';
+import { Delivered } from './Delivered.js';
 
 function App() {
   return (
     <div className="App">
       <Method></Method>
+      <PickedUp></PickedUp>
+      <Delivered></Delivered>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
